@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  email.api:
+    image: email.api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        source: ${DOCKER_BUILD_SOURCE}

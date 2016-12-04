@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  profile.api:
+    image: profile.api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        source: ${DOCKER_BUILD_SOURCE}

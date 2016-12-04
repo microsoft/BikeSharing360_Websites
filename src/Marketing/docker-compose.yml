@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  marketing:
+    image: marketing
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        source: ${DOCKER_BUILD_SOURCE}

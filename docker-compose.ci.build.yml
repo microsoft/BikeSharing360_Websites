@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  ci-build:
+    image: microsoft/aspnetcore-build-nightly:1.1.0-preview1-sdk-004050
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: /bin/bash -c "dotnet restore && dotnet publish -c Release -o ./bin/Release/PublishOutput"

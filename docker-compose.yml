@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+  marketing:
+    image: marketing
+    build:
+      context: ./src/Marketing
+      dockerfile: Dockerfile
+      args:
+        source: ${DOCKER_BUILD_SOURCE}
+
+  profileapi:
+    image: profileapi
+    build:
+      context: ./src/Profile.Api
+      dockerfile: Dockerfile
+      args:
+        source: ${DOCKER_BUILD_SOURCE}
+
+  feedbackapi:
+    image: feedbackapi
+    build:
+      context: ./src/Feedback.Api
+      dockerfile: Dockerfile
+      args:
+        source: ${DOCKER_BUILD_SOURCE}
+
+  emailapi:
+    image: emailapi
+    build:
+      context: ./src/Email.Api
+      dockerfile: Dockerfile
+      args:
+        source: ${DOCKER_BUILD_SOURCE}
+  
+# External dependence to some binary image (just a sample)
+#  ridesapi:
+#    image: bikesharingw-on.azurecr.io/ridesapi
+#    environment:
+#      - port=80
+#    ports:
+#      - "80"
