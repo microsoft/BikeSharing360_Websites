@@ -1,0 +1,322 @@
+﻿@using BikeSharing.Web.Resources
+
+<div class="mb-site container">
+    <section class="mb-header row flex-items-xs-middle">
+        <div class="col-xs-4">
+            <div class="mb-header-logo u-align-left">
+                <img src="Content/www/images/logo.svg" alt="BikeSharing Logo">
+            </div>
+        </div>
+        <div class="col-xs-8">
+            <nav class="mb-menu u-align-right">
+                <input type="checkbox"
+                       class="mb-menu-check is-hidden"
+                       name="responsiveMenu"
+                       id="responsiveMenu" />
+
+                <label for="responsiveMenu" class="mb-menu-toggle">
+                    <span class="mb-menu-line"></span>
+                    <span class="mb-menu-line mb-menu-line--middle"></span>
+                    <span class="mb-menu-line mb-menu-line--bottom"></span>
+                </label>
+
+                <ul class="mb-menu-wrapper">
+                    <li class="mb-menu-item">
+                        <a class="mb-menu-link" target="_self" href="@System.Web.Configuration.WebConfigurationManager.AppSettings["PrivateWebsite"]">@Locale.Menu_SignIn</a>
+                    </li>
+                    <li class="mb-menu-item">
+                        <a class="mb-menu-link" href="#hiw">@Locale.Menu_HiW</a>
+                    </li>
+                    <li class="mb-menu-item">
+                        <a class="mb-menu-link" href="#popular">@Locale.Menu_Intelligent</a>
+                    </li>
+                    <li class="mb-menu-item">
+                        <a class="mb-menu-link" href="#cities">@Locale.Menu_Cities</a>
+                    </li>
+                    <li class="mb-menu-item">
+                        <a class="mb-menu-link" href="#clients">@Locale.Menu_Clients</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="mb-hero">
+        <article class="mb-hero-banner u-center-container">
+            <div class="mb-hero-picture u-center-horizontal">
+                @Html.Partial("_Image", new { name = "hero", alt = "Hero image", pre = true })
+            </div>
+            <ul class="mb-hero-list">
+                <li class="mb-hero-item">
+                    <div class="mb-hero-logo wayp">
+                        <img src="Content/www/images/logo_gray.svg" alt="BikeSharing hero logo">
+                    </div>
+                </li>
+                <li class="mb-hero-item">
+                    <div class="mb-hero-info wayp">
+                        @Locale.Hero_Text
+                    </div>
+                </li>
+                <li class="mb-hero-item">
+                    <ul class="mb-hero-downloaders wayp">
+                        <li class="mb-hero-downloader" data-title="Windows">
+                            @Html.Partial("_Image", new { name = "get_windows_white", alt = "Windows", pre = false })
+                        </li>
+                        <li class="mb-hero-downloader" data-title="Android">
+                            @Html.Partial("_Image", new { name = "get_google-play_white", alt = "Android", pre = false })
+                        </li>
+                        <li class="mb-hero-downloader" data-title="iOS">
+                            @Html.Partial("_Image", new { name = "get_ios_white", alt = "iOS", pre = false })
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="mb-hiw">
+        <header class="mb-site-header mb-site-header--big">
+            @Locale.HiW_Title
+        </header>
+        <ul class="mb-hiw-list row flex-items-xs-between">
+            <li class="mb-hiw-item col-lg wayp" data-number="1" data-offset="800">
+                <div>
+                    <h2 class="mb-hiw-title col-xs-12">@Locale.HiW_Book_Title</h2>
+                    <div class="mb-hiw-info col-xs-12">@Locale.HiW_Book_Text</div>
+                    <div class="mb-hiw-image col-xs-12">
+                        <div class="mb-hiw-shadow col-xs-12">
+                            @Html.Partial("_Image", new { name = "book", alt = Locale.HiW_Book_Title, pre = true })
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mb-hiw-item col-lg wayp" data-number="2" data-offset="800">
+                <div>
+                    <h2 class="mb-hiw-title col-xs-12">@Locale.HiW_Discover_Title</h2>
+                    <div class="mb-hiw-info col-xs-12">@Locale.HiW_Discover_Text</div>
+                    <div class="mb-hiw-image col-xs-12">
+                        <div class="mb-hiw-shadow col-xs-12">
+                            @Html.Partial("_Image", new { name = "discover", alt = Locale.HiW_Discover_Title, pre = true })
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mb-hiw-item col-lg wayp" data-number="3" data-offset="800">
+                <div>
+                    <h2 class="mb-hiw-title col-xs-12">@Locale.HiW_Enjoy_Title</h2>
+                    <div class="mb-hiw-info col-xs-12">@Locale.HiW_Enjoy_Text</div>
+                    <div class="mb-hiw-image col-xs-12">
+                        <div class="mb-hiw-shadow col-xs-12">
+                            @Html.Partial("_Image", new { name = "enjoy", alt = Locale.HiW_Enjoy_Title, pre = true })
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="mb-popular">
+        <header class="mb-site-header mb-site-header--brand">
+            @Locale.Intelligent_Title
+        </header>
+
+        <div class="mb-site-container">
+            <div class="mb-popular-maps wayp">
+                <div class="mb-popular-map mb-popular-map--layer1">
+                    @Html.Partial("_Image", new { name = "popular-map-layer1", alt = Locale.Intelligent_Map + "1", pre = false })
+                </div>
+                <div class="mb-popular-map mb-popular-map--layer2">
+                    @Html.Partial("_Image", new { name = "popular-map-layer2", alt = Locale.Intelligent_Map + "2", pre = false })
+                </div>
+                <div class="mb-popular-map mb-popular-map--layer3">
+                    @Html.Partial("_Image", new { name = "popular-map-layer3", alt = Locale.Intelligent_Map + "3", pre = false })
+                </div>
+                <div class="mb-popular-map mb-popular-map--layer4">
+                    @Html.Partial("_Image", new { name = "popular-map-layer4", alt = Locale.Intelligent_Map + "4", pre = false })
+                </div>
+
+                <div class="mb-popular-content u-center-vertical wayp">
+                    <div class="mb-popular-logo">
+                        <img src="Content/www/images/logo.svg" alt="BikeSharing Logo">
+                    </div>
+                    <div class="mb-popular-text">
+                        @Locale.Intelligent_Text
+                    </div>
+                    <div class="mb-popular-download">
+                        <span class="mb-popular-subtitle">
+                            @Locale.Intelligent_Download
+                        </span>
+                        <ul class="mb-popular-downloaders">
+                            <li class="mb-popular-downloader" data-title="Windows">
+                                @Html.Partial("_Image", new { name = "get_windows_gray", alt = "Windows", pre = false })
+                            </li>
+                            <li class="mb-popular-downloader" data-title="Android">
+                                @Html.Partial("_Image", new { name = "get_google-play_gray", alt = "Android", pre = false })
+                            </li>
+                            <li class="mb-popular-downloader" data-title="iOS">
+                                @Html.Partial("_Image", new { name = "get_ios_gray", alt = "iOS", pre = false })
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @{
+        var cities = new[]
+            {
+                new { Name = "NewYork", Locale = Locale.Cities_NewYork },
+                new { Name = "Seattle", Locale = Locale.Cities_Seattle },
+                new { Name = "SanFrancisco", Locale = Locale.Cities_SanFrancisco },
+                new { Name = "Boston", Locale = Locale.Cities_Boston },
+                new { Name = "Barcelona", Locale = Locale.Cities_Barcelona },
+                new { Name = "MexicoCity", Locale = Locale.Cities_MexicoCity }
+            }
+        .ToList();
+    }
+    <section class="mb-cities js-cities">
+        @for (int i = 1; i <= cities.Count; i++)
+        {
+            if (i == 3)
+            {
+                <input class="mb-cities-check js-cities-check" type="radio" checked="checked" name="bikes-slider" id="bikes-slider_@i" />
+            }
+            else
+            {
+                <input class="mb-cities-check js-cities-check" type="radio" name="bikes-slider" id="bikes-slider_@i" />
+            }
+        }
+        <div class="mb-cities-prev">
+            <div class="mb-cities-prevtitle">Back</div>
+            <div class="mb-cities-labels">
+                @{
+                    <label class="mb-cities-label" for="bikes-slider_@cities.Count"></label>
+                    for (int j = 1; j < cities.Count; j++)
+                    {
+                        <label class="mb-cities-label" for="bikes-slider_@j"></label>
+                    }
+                }
+            </div>
+        </div>
+        <div class="mb-cities-text u-center-horizontal wayp" data-offset="800">
+            @Locale.Cities_Text
+        </div>
+        <div class="mb-cities-container">
+            <div class="mb-cities-slider mb-cities-slider--vectors wayp" data-offset="700">
+                <div class="mb-cities-city mb-cities-city--vectors">
+                    <div class="mb-cities-bike"></div>
+                </div>
+                @foreach (var city in cities)
+                {
+                    <div class="mb-cities-city mb-cities-city--vectors">
+                        <img class="mb-cities-skyline" src="Content/www/images/city_@(city.Name).svg" alt="@city.Locale skyline">
+                    </div>
+                }
+            </div>
+            <div class="mb-cities-lines mb-cities-lines--sides u-center-horizontal"></div>
+            <div class="mb-cities-skymask u-center-horizontal"></div>
+
+            <div class="mb-cities-slider wayp" data-offset="600">
+                <div class="mb-cities-city">
+                    <div class="mb-cities-bike"></div>
+                </div>
+                @foreach (var city in cities)
+                {
+                    <div class="mb-cities-city">
+                        <div class="mb-cities-bike">
+                            @Html.Partial("_Image", new { name = "bike_" + city.Name, alt = city.Locale, pre = false })
+                        </div>
+                        <div class="mb-cities-bike mb-cities-bike--gray">
+                            @Html.Partial("_Image", new { name = "bw_bike_" + city.Name, alt = city.Locale + " gray", pre = false })
+                        </div>
+
+                        <div class="mb-cities-button u-center-horizontal">@city.Locale</div>
+                    </div>
+                }
+            </div>
+            <div class="mb-cities-lines u-center-horizontal"></div>
+        </div>
+        <div class="mb-cities-next">
+            <div class="mb-cities-nexttitle">Next</div>
+            <div class="mb-cities-labels">
+                @{
+                    for (int k = 2; k <= cities.Count; k++)
+                    {
+                        <label class="mb-cities-label" for="bikes-slider_@k"></label>
+                    }
+                    <label class="mb-cities-label" for="bikes-slider_1"></label>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-clients">
+        <div class="mb-clients-background">
+            @Html.Partial("_Image", new { name = "background_comments", alt = "Clients comments", pre = true })
+        </div>
+        <div class="mb-clients-opinion u-center-both">
+            <div class="mb-clients-text">
+                <span class="mb-clients-quote wayp" data-offset="800">"@Locale.Clients_Quote"</span>
+            </div>
+            <div class="mb-clients-author wayp" data-offset="800">
+                <div class="mb-clients-image">
+                    @Html.Partial("_Image", new { name = "photo_avatar-woman", alt = "Clients image", pre = true })
+                </div>
+                <div class="mb-clients-info">
+                    <span class="mb-clients-name">@Locale.Clients_Author</span>
+                    <span class="mb-clients-city">@Locale.Clients_City</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mb-footerb"></div>
+    <footer class="mb-footer">
+        <div class="mb-site-container">
+            <div class="row u-m-0">
+                <div class="col-xs-4">
+                    <img class="mb-footer-logo" src="Content/www/images/logo_square.svg" alt="BikeSharing Logo">
+                    <img class="mb-footer-ms" src="Content/www/images/microsoft.svg" alt="Microsoft Logo">
+                </div>
+                <div class="col-xs-8 u-align-right">
+                    <ul class="mb-footer-menu">
+                        <li class="mb-footer-item">
+                            <a class="mb-footer-link" href="#hiw">@Locale.Menu_HiW</a>
+                        </li>
+                        <li class="mb-footer-item">
+                            <a class="mb-footer-link" href="#popular">@Locale.Menu_Intelligent</a>
+                        </li>
+                        <li class="mb-footer-item">
+                            <a class="mb-footer-link" href="#cities">@Locale.Menu_Cities</a>
+                        </li>
+                        <li class="mb-footer-item">
+                            <a class="mb-footer-link" href="#clients">@Locale.Menu_Clients</a>
+                        </li>
+                    </ul>
+                    <ul class="mb-footer-menu">
+                        <li class="mb-footer-item mb-footer-item--social">
+                            <span class="mb-footer-link icon-facebook"></span>
+                        </li>
+                        <li class="mb-footer-item mb-footer-item--social">
+                            <span class="mb-footer-link icon-twitter"></span>
+                        </li>
+                        <li class="mb-footer-item mb-footer-item--social">
+                            <span class="mb-footer-link icon-instagram"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mb-footer-info row u-m-0">
+                <div class="col-md-7 u-align-left">
+                    @Locale.Footer_Info <a href="http://mynewdemoGitHublocation" target="_blank">http://mynewdemoGitHublocation</a>
+                </div>
+                <div class="mb-footer-links col-md-5 u-align-right">
+                    <span class="u-ml-10">@Locale.Footer_Terms</span>
+                    <span class="u-ml-10">@Locale.Footer_Privacy</span>
+                    <span class="u-ml-10">@Locale.Footer_Contact</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

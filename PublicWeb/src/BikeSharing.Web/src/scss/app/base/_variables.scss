@@ -1,0 +1,77 @@
+﻿// Colors
+// Structure for colors:
+// $color-name
+// $color-name-semidark
+// $color-name-dark
+// $color-name-darker
+// $color-name-semilight
+// $color-name-light
+// $color-name-lighter
+
+$color-brand: #3063F5;
+$color-brand-dark: darken($color-brand, 10%);
+$color-secondary: #FFDC3A;
+$color-secondary-dark: darken($color-secondary, 10%);
+
+$color-background-light: #FFF;
+$color-background-semilight: #F4F6FA;
+
+$color-background-dark: #000;
+$color-background-darker: #071022;
+
+$color-foreground-dark: #484F63;
+$color-foregorund-semidark: #474E62;
+$color-foregorund-darker: #071022;
+$color-foreground-light: #FFF;
+$color-foreground-lighter: #F4F6FA;
+$color-foreground-semilight: #DADCE0;
+
+$color-highlighted: #FF5E4D;
+
+// Fonts
+$font-weight-light: 200;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-semibold: 800;
+$font-weight-black: 900;
+
+// Animations
+$animation-speed-default: .35s;
+$animation-speed-fast: .15s;
+$animation-speed-slow: .5s;
+
+// Medias
+$media-screen-min-xxl: 1920px;
+$media-screen-max-xl: 1920px;
+$media-screen-min-xl: 1440px;
+$media-screen-max-l: 1440px;
+$media-screen-min-l: 960px;
+$media-screen-max-m: 960px;
+$media-screen-min-m: 720px;
+$media-screen-max-s: 720px;
+$media-screen-min-s: 680px;
+$media-screen-max-xs: 680px;
+$media-screen-min-xs: 480px;
+$media-screen-max-xxs: 480px;
+$media-screen-menu: 790px;
+
+// Bootstrap medias
+$media-bs-xs: 0;
+$media-bs-sm: 544px;
+$media-bs-md: 768px;
+$media-bs-lg: 992px;
+$media-bs-xl: 1200px;
+
+// Borders
+$border-big: 4px;
+$border-medium: 3px;
+$border-thin: 2px;
+$border-slim: 1px;
+
+// Shadows
+$shadow-default: 0 4px 24px 0 rgba($color-background-dark, .12);
+
+// Sizes
+$size-header: 96px;
+$size-container-translate: 17px;
+$size-margin-box: 70px;

@@ -1,0 +1,6 @@
+﻿<picture class="@(Model.pre ? "u-pre" : "")" style="@(Model.pre ? "background-image: url('"+ Url.Content("~/Content/www/images/" + Model.name + "@pre.png") + "');" : "")">
+    <source srcset="@Url.Content("~/Content/www/images/480_" + Model.name + ".png") 1x, @Url.Content("~/Content/www/images/480_" + Model.name + "@2x.png") 2x, @Url.Content("~/Content/www/images/480_" + Model.name + "@3x.png") 3x" media="(max-width: 480px)">
+    <source srcset="@Url.Content("~/Content/www/images/960_" + Model.name + ".png") 1x, @Url.Content("~/Content/www/images/960_" + Model.name + "@2x.png") 2x, @Url.Content("~/Content/www/images/960_" + Model.name + "@3x.png") 3x" media="(max-width: 960px)">
+    <source srcset="@Url.Content("~/Content/www/images/" + Model.name + ".png") 1x, @Url.Content("~/Content/www/images/" + Model.name + "@2x.png") 2x, @Url.Content("~/Content/www/images/" + Model.name + "@3x.png") 3x">
+    <img src="@Url.Content("~/Content/www/images/" + Model.name + ".png")" alt="@Model.alt">
+</picture>

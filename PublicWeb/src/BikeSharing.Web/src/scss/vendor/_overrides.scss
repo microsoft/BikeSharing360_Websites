@@ -1,0 +1,6 @@
+﻿@import '../app/base/variables';
+
+// Override Bootstrap variables
+$enable-flex: true;
+$container-max-widths: (xs: $media-screen-max-xs, sm: $media-screen-max-s, md: $media-screen-max-m, lg: $media-screen-max-l, xl: $media-screen-max-xl);
+$grid-breakpoints: ( xs: $media-bs-xs, sm: $media-bs-sm, md: $media-bs-md, lg: $media-bs-lg, xl: $media-bs-xl ) !default;
