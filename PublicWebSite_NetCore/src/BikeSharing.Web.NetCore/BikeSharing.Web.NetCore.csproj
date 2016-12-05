@@ -1,0 +1,409 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  "tools": {
+    "BundlerMinifier.Core": "2.0.238",
+    "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
+  },
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+    "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
+    }
+  },
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "**/*.cshtml",
+      "appsettings.json",
+      "web.config"
+    ]
+  },
+
+  "scripts": {
+    "prepublish": [ "bower install", "dotnet bundle" ]
+  }
+  -->
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup Label="Configuration">
+    <RootNamespace>BikeSharing.Web</RootNamespace>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="**\*.cs" Exclude="$(GlobalExclude)" />
+    <EmbeddedResource Include="**\*.resx" Exclude="$(GlobalExclude)" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.App">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Sdk.Web">
+      <Version>1.0.0-alpha-20161019-1-70</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Tools">
+      <Version>1.0.0-preview2-final</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Routing">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Console">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink.Loader">
+      <Version>14.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="wwwroot\images\480_background_comments%402x.png" />
+    <Content Include="wwwroot\images\480_background_comments%403x.png" />
+    <Content Include="wwwroot\images\480_background_comments.png" />
+    <Content Include="wwwroot\images\480_bike%402x.png" />
+    <Content Include="wwwroot\images\480_bike%403x.png" />
+    <Content Include="wwwroot\images\480_bike.png" />
+    <Content Include="wwwroot\images\480_bike_Barcelona%402x.png" />
+    <Content Include="wwwroot\images\480_bike_Barcelona%403x.png" />
+    <Content Include="wwwroot\images\480_bike_Barcelona.png" />
+    <Content Include="wwwroot\images\480_bike_Boston%402x.png" />
+    <Content Include="wwwroot\images\480_bike_Boston%403x.png" />
+    <Content Include="wwwroot\images\480_bike_Boston.png" />
+    <Content Include="wwwroot\images\480_bike_gray%402x.png" />
+    <Content Include="wwwroot\images\480_bike_gray%403x.png" />
+    <Content Include="wwwroot\images\480_bike_gray.png" />
+    <Content Include="wwwroot\images\480_bike_MexicoCity%402x.png" />
+    <Content Include="wwwroot\images\480_bike_MexicoCity%403x.png" />
+    <Content Include="wwwroot\images\480_bike_MexicoCity.png" />
+    <Content Include="wwwroot\images\480_bike_NewYork%402x.png" />
+    <Content Include="wwwroot\images\480_bike_NewYork%403x.png" />
+    <Content Include="wwwroot\images\480_bike_NewYork.png" />
+    <Content Include="wwwroot\images\480_bike_SanFrancisco%402x.png" />
+    <Content Include="wwwroot\images\480_bike_SanFrancisco%403x.png" />
+    <Content Include="wwwroot\images\480_bike_SanFrancisco.png" />
+    <Content Include="wwwroot\images\480_bike_Seattle%402x.png" />
+    <Content Include="wwwroot\images\480_bike_Seattle%403x.png" />
+    <Content Include="wwwroot\images\480_bike_Seattle.png" />
+    <Content Include="wwwroot\images\480_book%402x.png" />
+    <Content Include="wwwroot\images\480_book%403x.png" />
+    <Content Include="wwwroot\images\480_book.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Barcelona%402x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Barcelona%403x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Barcelona.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Boston%402x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Boston%403x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Boston.png" />
+    <Content Include="wwwroot\images\480_bw_bike_MexicoCity%402x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_MexicoCity%403x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_MexicoCity.png" />
+    <Content Include="wwwroot\images\480_bw_bike_NewYork%402x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_NewYork%403x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_NewYork.png" />
+    <Content Include="wwwroot\images\480_bw_bike_SanFrancisco%402x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_SanFrancisco%403x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_SanFrancisco.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Seattle%402x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Seattle%403x.png" />
+    <Content Include="wwwroot\images\480_bw_bike_Seattle.png" />
+    <Content Include="wwwroot\images\480_discover%402x.png" />
+    <Content Include="wwwroot\images\480_discover%403x.png" />
+    <Content Include="wwwroot\images\480_discover.png" />
+    <Content Include="wwwroot\images\480_enjoy%402x.png" />
+    <Content Include="wwwroot\images\480_enjoy%403x.png" />
+    <Content Include="wwwroot\images\480_enjoy.png" />
+    <Content Include="wwwroot\images\480_favicon.png" />
+    <Content Include="wwwroot\images\480_get_google-play_gray%402x.png" />
+    <Content Include="wwwroot\images\480_get_google-play_gray%403x.png" />
+    <Content Include="wwwroot\images\480_get_google-play_gray.png" />
+    <Content Include="wwwroot\images\480_get_google-play_white%402x.png" />
+    <Content Include="wwwroot\images\480_get_google-play_white%403x.png" />
+    <Content Include="wwwroot\images\480_get_google-play_white.png" />
+    <Content Include="wwwroot\images\480_get_ios_gray%402x.png" />
+    <Content Include="wwwroot\images\480_get_ios_gray%403x.png" />
+    <Content Include="wwwroot\images\480_get_ios_gray.png" />
+    <Content Include="wwwroot\images\480_get_ios_white%402x.png" />
+    <Content Include="wwwroot\images\480_get_ios_white%403x.png" />
+    <Content Include="wwwroot\images\480_get_ios_white.png" />
+    <Content Include="wwwroot\images\480_get_windows_gray%402x.png" />
+    <Content Include="wwwroot\images\480_get_windows_gray%403x.png" />
+    <Content Include="wwwroot\images\480_get_windows_gray.png" />
+    <Content Include="wwwroot\images\480_get_windows_white%402x.png" />
+    <Content Include="wwwroot\images\480_get_windows_white%403x.png" />
+    <Content Include="wwwroot\images\480_get_windows_white.png" />
+    <Content Include="wwwroot\images\480_hero%402x.png" />
+    <Content Include="wwwroot\images\480_hero%403x.png" />
+    <Content Include="wwwroot\images\480_hero.png" />
+    <Content Include="wwwroot\images\480_photo_avatar-woman%402x.png" />
+    <Content Include="wwwroot\images\480_photo_avatar-woman%403x.png" />
+    <Content Include="wwwroot\images\480_photo_avatar-woman.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer1%402x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer1%403x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer1.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer2%402x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer2%403x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer2.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer3%402x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer3%403x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer3.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer4%402x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer4%403x.png" />
+    <Content Include="wwwroot\images\480_popular-map-layer4.png" />
+    <Content Include="wwwroot\images\960_background_comments%402x.png" />
+    <Content Include="wwwroot\images\960_background_comments%403x.png" />
+    <Content Include="wwwroot\images\960_background_comments.png" />
+    <Content Include="wwwroot\images\960_bike%402x.png" />
+    <Content Include="wwwroot\images\960_bike%403x.png" />
+    <Content Include="wwwroot\images\960_bike.png" />
+    <Content Include="wwwroot\images\960_bike_Barcelona%402x.png" />
+    <Content Include="wwwroot\images\960_bike_Barcelona%403x.png" />
+    <Content Include="wwwroot\images\960_bike_Barcelona.png" />
+    <Content Include="wwwroot\images\960_bike_Boston%402x.png" />
+    <Content Include="wwwroot\images\960_bike_Boston%403x.png" />
+    <Content Include="wwwroot\images\960_bike_Boston.png" />
+    <Content Include="wwwroot\images\960_bike_gray%402x.png" />
+    <Content Include="wwwroot\images\960_bike_gray%403x.png" />
+    <Content Include="wwwroot\images\960_bike_gray.png" />
+    <Content Include="wwwroot\images\960_bike_MexicoCity%402x.png" />
+    <Content Include="wwwroot\images\960_bike_MexicoCity%403x.png" />
+    <Content Include="wwwroot\images\960_bike_MexicoCity.png" />
+    <Content Include="wwwroot\images\960_bike_NewYork%402x.png" />
+    <Content Include="wwwroot\images\960_bike_NewYork%403x.png" />
+    <Content Include="wwwroot\images\960_bike_NewYork.png" />
+    <Content Include="wwwroot\images\960_bike_SanFrancisco%402x.png" />
+    <Content Include="wwwroot\images\960_bike_SanFrancisco%403x.png" />
+    <Content Include="wwwroot\images\960_bike_SanFrancisco.png" />
+    <Content Include="wwwroot\images\960_bike_Seattle%402x.png" />
+    <Content Include="wwwroot\images\960_bike_Seattle%403x.png" />
+    <Content Include="wwwroot\images\960_bike_Seattle.png" />
+    <Content Include="wwwroot\images\960_book%402x.png" />
+    <Content Include="wwwroot\images\960_book%403x.png" />
+    <Content Include="wwwroot\images\960_book.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Barcelona%402x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Barcelona%403x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Barcelona.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Boston%402x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Boston%403x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Boston.png" />
+    <Content Include="wwwroot\images\960_bw_bike_MexicoCity%402x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_MexicoCity%403x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_MexicoCity.png" />
+    <Content Include="wwwroot\images\960_bw_bike_NewYork%402x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_NewYork%403x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_NewYork.png" />
+    <Content Include="wwwroot\images\960_bw_bike_SanFrancisco%402x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_SanFrancisco%403x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_SanFrancisco.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Seattle%402x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Seattle%403x.png" />
+    <Content Include="wwwroot\images\960_bw_bike_Seattle.png" />
+    <Content Include="wwwroot\images\960_discover%402x.png" />
+    <Content Include="wwwroot\images\960_discover%403x.png" />
+    <Content Include="wwwroot\images\960_discover.png" />
+    <Content Include="wwwroot\images\960_enjoy%402x.png" />
+    <Content Include="wwwroot\images\960_enjoy%403x.png" />
+    <Content Include="wwwroot\images\960_enjoy.png" />
+    <Content Include="wwwroot\images\960_favicon.png" />
+    <Content Include="wwwroot\images\960_get_google-play_gray%402x.png" />
+    <Content Include="wwwroot\images\960_get_google-play_gray%403x.png" />
+    <Content Include="wwwroot\images\960_get_google-play_gray.png" />
+    <Content Include="wwwroot\images\960_get_google-play_white%402x.png" />
+    <Content Include="wwwroot\images\960_get_google-play_white%403x.png" />
+    <Content Include="wwwroot\images\960_get_google-play_white.png" />
+    <Content Include="wwwroot\images\960_get_ios_gray%402x.png" />
+    <Content Include="wwwroot\images\960_get_ios_gray%403x.png" />
+    <Content Include="wwwroot\images\960_get_ios_gray.png" />
+    <Content Include="wwwroot\images\960_get_ios_white%402x.png" />
+    <Content Include="wwwroot\images\960_get_ios_white%403x.png" />
+    <Content Include="wwwroot\images\960_get_ios_white.png" />
+    <Content Include="wwwroot\images\960_get_windows_gray%402x.png" />
+    <Content Include="wwwroot\images\960_get_windows_gray%403x.png" />
+    <Content Include="wwwroot\images\960_get_windows_gray.png" />
+    <Content Include="wwwroot\images\960_get_windows_white%402x.png" />
+    <Content Include="wwwroot\images\960_get_windows_white%403x.png" />
+    <Content Include="wwwroot\images\960_get_windows_white.png" />
+    <Content Include="wwwroot\images\960_hero%402x.png" />
+    <Content Include="wwwroot\images\960_hero%403x.png" />
+    <Content Include="wwwroot\images\960_hero.png" />
+    <Content Include="wwwroot\images\960_photo_avatar-woman%402x.png" />
+    <Content Include="wwwroot\images\960_photo_avatar-woman%403x.png" />
+    <Content Include="wwwroot\images\960_photo_avatar-woman.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer1%402x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer1%403x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer1.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer2%402x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer2%403x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer2.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer3%402x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer3%403x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer3.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer4%402x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer4%403x.png" />
+    <Content Include="wwwroot\images\960_popular-map-layer4.png" />
+    <Content Include="wwwroot\images\background_comments%402x.png" />
+    <Content Include="wwwroot\images\background_comments%403x.png" />
+    <Content Include="wwwroot\images\background_comments%40pre.png" />
+    <Content Include="wwwroot\images\background_comments.png" />
+    <Content Include="wwwroot\images\bike%402x.png" />
+    <Content Include="wwwroot\images\bike%403x.png" />
+    <Content Include="wwwroot\images\bike.png" />
+    <Content Include="wwwroot\images\bike_Barcelona%402x.png" />
+    <Content Include="wwwroot\images\bike_Barcelona%403x.png" />
+    <Content Include="wwwroot\images\bike_Barcelona.png" />
+    <Content Include="wwwroot\images\bike_Boston%402x.png" />
+    <Content Include="wwwroot\images\bike_Boston%403x.png" />
+    <Content Include="wwwroot\images\bike_Boston.png" />
+    <Content Include="wwwroot\images\bike_gray%402x.png" />
+    <Content Include="wwwroot\images\bike_gray%403x.png" />
+    <Content Include="wwwroot\images\bike_gray.png" />
+    <Content Include="wwwroot\images\bike_MexicoCity%402x.png" />
+    <Content Include="wwwroot\images\bike_MexicoCity%403x.png" />
+    <Content Include="wwwroot\images\bike_MexicoCity.png" />
+    <Content Include="wwwroot\images\bike_NewYork%402x.png" />
+    <Content Include="wwwroot\images\bike_NewYork%403x.png" />
+    <Content Include="wwwroot\images\bike_NewYork.png" />
+    <Content Include="wwwroot\images\bike_SanFrancisco%402x.png" />
+    <Content Include="wwwroot\images\bike_SanFrancisco%403x.png" />
+    <Content Include="wwwroot\images\bike_SanFrancisco.png" />
+    <Content Include="wwwroot\images\bike_Seattle%402x.png" />
+    <Content Include="wwwroot\images\bike_Seattle%403x.png" />
+    <Content Include="wwwroot\images\bike_Seattle.png" />
+    <Content Include="wwwroot\images\book%402x.png" />
+    <Content Include="wwwroot\images\book%403x.png" />
+    <Content Include="wwwroot\images\book%40pre.png" />
+    <Content Include="wwwroot\images\book.png" />
+    <Content Include="wwwroot\images\bw_bike_Barcelona%402x.png" />
+    <Content Include="wwwroot\images\bw_bike_Barcelona%403x.png" />
+    <Content Include="wwwroot\images\bw_bike_Barcelona.png" />
+    <Content Include="wwwroot\images\bw_bike_Boston%402x.png" />
+    <Content Include="wwwroot\images\bw_bike_Boston%403x.png" />
+    <Content Include="wwwroot\images\bw_bike_Boston.png" />
+    <Content Include="wwwroot\images\bw_bike_MexicoCity%402x.png" />
+    <Content Include="wwwroot\images\bw_bike_MexicoCity%403x.png" />
+    <Content Include="wwwroot\images\bw_bike_MexicoCity.png" />
+    <Content Include="wwwroot\images\bw_bike_NewYork%402x.png" />
+    <Content Include="wwwroot\images\bw_bike_NewYork%403x.png" />
+    <Content Include="wwwroot\images\bw_bike_NewYork.png" />
+    <Content Include="wwwroot\images\bw_bike_SanFrancisco%402x.png" />
+    <Content Include="wwwroot\images\bw_bike_SanFrancisco%403x.png" />
+    <Content Include="wwwroot\images\bw_bike_SanFrancisco.png" />
+    <Content Include="wwwroot\images\bw_bike_Seattle%402x.png" />
+    <Content Include="wwwroot\images\bw_bike_Seattle%403x.png" />
+    <Content Include="wwwroot\images\bw_bike_Seattle.png" />
+    <Content Include="wwwroot\images\city_Barcelona.svg" />
+    <Content Include="wwwroot\images\city_Boston.svg" />
+    <Content Include="wwwroot\images\city_MexicoCity.svg" />
+    <Content Include="wwwroot\images\city_NewYork.svg" />
+    <Content Include="wwwroot\images\city_SanFrancisco.svg" />
+    <Content Include="wwwroot\images\city_Seattle.svg" />
+    <Content Include="wwwroot\images\discover%402x.png" />
+    <Content Include="wwwroot\images\discover%403x.png" />
+    <Content Include="wwwroot\images\discover%40pre.png" />
+    <Content Include="wwwroot\images\discover.png" />
+    <Content Include="wwwroot\images\enjoy%402x.png" />
+    <Content Include="wwwroot\images\enjoy%403x.png" />
+    <Content Include="wwwroot\images\enjoy%40pre.png" />
+    <Content Include="wwwroot\images\enjoy.png" />
+    <Content Include="wwwroot\images\favicon.png" />
+    <Content Include="wwwroot\images\get_google-play_gray%402x.png" />
+    <Content Include="wwwroot\images\get_google-play_gray%403x.png" />
+    <Content Include="wwwroot\images\get_google-play_gray.png" />
+    <Content Include="wwwroot\images\get_google-play_white%402x.png" />
+    <Content Include="wwwroot\images\get_google-play_white%403x.png" />
+    <Content Include="wwwroot\images\get_google-play_white.png" />
+    <Content Include="wwwroot\images\get_ios_gray%402x.png" />
+    <Content Include="wwwroot\images\get_ios_gray%403x.png" />
+    <Content Include="wwwroot\images\get_ios_gray.png" />
+    <Content Include="wwwroot\images\get_ios_white%402x.png" />
+    <Content Include="wwwroot\images\get_ios_white%403x.png" />
+    <Content Include="wwwroot\images\get_ios_white.png" />
+    <Content Include="wwwroot\images\get_windows_gray%402x.png" />
+    <Content Include="wwwroot\images\get_windows_gray%403x.png" />
+    <Content Include="wwwroot\images\get_windows_gray.png" />
+    <Content Include="wwwroot\images\get_windows_white%402x.png" />
+    <Content Include="wwwroot\images\get_windows_white%403x.png" />
+    <Content Include="wwwroot\images\get_windows_white.png" />
+    <Content Include="wwwroot\images\hero%402x.png" />
+    <Content Include="wwwroot\images\hero%403x.png" />
+    <Content Include="wwwroot\images\hero%40pre.png" />
+    <Content Include="wwwroot\images\hero.png" />
+    <Content Include="wwwroot\images\logo.svg" />
+    <Content Include="wwwroot\images\logo_gray.svg" />
+    <Content Include="wwwroot\images\logo_square.svg" />
+    <Content Include="wwwroot\images\microsoft.svg" />
+    <Content Include="wwwroot\images\photo_avatar-woman%402x.png" />
+    <Content Include="wwwroot\images\photo_avatar-woman%403x.png" />
+    <Content Include="wwwroot\images\photo_avatar-woman%40pre.png" />
+    <Content Include="wwwroot\images\photo_avatar-woman.png" />
+    <Content Include="wwwroot\images\popular-map-layer1%402x.png" />
+    <Content Include="wwwroot\images\popular-map-layer1%403x.png" />
+    <Content Include="wwwroot\images\popular-map-layer1.png" />
+    <Content Include="wwwroot\images\popular-map-layer2%402x.png" />
+    <Content Include="wwwroot\images\popular-map-layer2%403x.png" />
+    <Content Include="wwwroot\images\popular-map-layer2.png" />
+    <Content Include="wwwroot\images\popular-map-layer3%402x.png" />
+    <Content Include="wwwroot\images\popular-map-layer3%403x.png" />
+    <Content Include="wwwroot\images\popular-map-layer3.png" />
+    <Content Include="wwwroot\images\popular-map-layer4%402x.png" />
+    <Content Include="wwwroot\images\popular-map-layer4%403x.png" />
+    <Content Include="wwwroot\images\popular-map-layer4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\modules\main.ts" />
+    <None Include="src\scss\app\app.scss" />
+    <None Include="src\scss\app\base\_fonts.scss" />
+    <None Include="src\scss\app\base\_globals.scss" />
+    <None Include="src\scss\app\base\_states.scss" />
+    <None Include="src\scss\app\base\_utils.scss" />
+    <None Include="src\scss\app\base\_variables.scss" />
+    <None Include="src\scss\app\components\mybikes\_cities.scss" />
+    <None Include="src\scss\app\components\mybikes\_clients.scss" />
+    <None Include="src\scss\app\components\mybikes\_footer.scss" />
+    <None Include="src\scss\app\components\mybikes\_header.scss" />
+    <None Include="src\scss\app\components\mybikes\_hero.scss" />
+    <None Include="src\scss\app\components\mybikes\_hiw.scss" />
+    <None Include="src\scss\app\components\mybikes\_menu.scss" />
+    <None Include="src\scss\app\components\mybikes\_popular.scss" />
+    <None Include="src\scss\app\components\mybikes\_site.scss" />
+    <None Include="src\scss\vendor\vendor.scss" />
+    <None Include="src\scss\vendor\_overrides.scss" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+</Project>

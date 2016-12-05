@@ -1,0 +1,36 @@
+﻿@import '../../base/variables';
+
+.mb {
+    &-header {
+        background-color: $color-background-light;
+        height: $size-header;
+        margin: 0;
+        padding: 0 2vw 0 2vw;
+
+        &-logo {
+            padding-left: 11px;
+
+            img {
+                max-width: 235px;
+                min-width: 200px;
+                width: 100%;
+            }
+
+            @media screen and (max-width: $media-screen-max-l) {
+                padding-left: 0;
+            }
+        }
+
+        @media screen and (max-width: $media-screen-max-l) {
+            padding: 0;
+        }
+
+        @media screen and (max-width: $media-screen-menu) {
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 20;
+        }
+    }
+}
