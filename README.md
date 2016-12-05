@@ -14,6 +14,15 @@ This web uses gulp tasks to manage assets and scripts. Output of gulp tasks is i
 
 The csproj file was modified manually to include a MSBuild Task to allow publish the output of gulp, even thought this output is not part of the project. Look at the csproj at line 710 and below for these changes.
 
+BikeSharing360 Public Web Site (NetCore)
+---------------------------------------
+
+The solution _Public_Web_Site_Core.sln_ located in folder _/PublicWebSite_NetCore/_ contains the BikeSharing360 Public Web Site. This is the **NetCore version using csproj (no project.json)**.
+
+Project must be opened using VS2017RC (No VS2015 support).
+
+Code has been updated to use some of the new MVC Core features , like _Tag Helpers_.
+
 Keynote's MultiContainer Demo
 -----------------------------
 
