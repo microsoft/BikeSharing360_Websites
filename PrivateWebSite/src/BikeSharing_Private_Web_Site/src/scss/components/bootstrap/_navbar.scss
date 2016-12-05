@@ -1,0 +1,19 @@
+@import '../../base/variables';
+
+.navbar{
+    border-bottom: 1px solid $color-background-dark;
+    padding: 0 5%;
+
+    &-brand{
+        background: url("/images/logo-bikes-sharing-3-6-0.png") no-repeat;
+        width: 214px;
+        height: 29px;
+        background-size: contain;
+        margin: 18px 4% 0 0;
+
+        @media (max-width: $xl-minwidth) {
+            float: none;
+            margin-bottom: 7px;
+        }
+    }
+}

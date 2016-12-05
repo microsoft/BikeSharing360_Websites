@@ -1,0 +1,15 @@
+@model BikeSharing_Private_Web_Site.Models.SubscriptionViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Subscriptions";
+}
+
+<vc:subscription-list vm="@Model"></vc:subscription-list>
+
+@section Scripts {
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function () { EvalPreviousNext(@Model.PaginationInfo.ActualPage, @Model.PaginationInfo.TotalPages); });
+        //]]>
+    </script>
+}

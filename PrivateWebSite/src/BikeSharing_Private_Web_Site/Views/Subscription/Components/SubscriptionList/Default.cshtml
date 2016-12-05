@@ -1,0 +1,77 @@
+@model BikeSharing_Private_Web_Site.Models.SubscriptionViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+<div class="container page-container bsh-stations">
+    <div class="row flex-items-xs-bottom">
+        <div class="col-md-3 col-sm-12">
+            <h1>Subscriptions</h1>
+        </div>
+        <div class="col-md-9 col-sm-12 u-bottom u-align-right">
+            <span>Showing @Html.DisplayFor(modelItem => modelItem.PaginationInfo.ItemsPerPage) of @Html.DisplayFor(modelItem => modelItem.PaginationInfo.TotalItems) subscriptions - Page @(Model.PaginationInfo.ActualPage + 1) of @Html.DisplayFor(x => x.PaginationInfo.TotalPages)</span>
+        </div>
+    </div>
+    <div class="margin-middle-top">
+        <table class="table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="u-align-left">User Id</th>
+                    <th class="u-align-left">User Name</th>
+                    <th class="u-align-left">Email</th>
+                    <th class="u-align-center">Subscription Type</th>
+                    <th class="u-align-center">Subscription Status</th>
+                    <th class="u-align-left">Credit Card</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Subscriptions)
+                {
+                    <tr>
+                        <td class="u-align-left is-info" scope="row"><span class="u-ellipsis u-width-200">@Html.DisplayFor(modelItem => item.UserId)</span></td>
+                        <td class="u-align-left is-light">@Html.DisplayFor(modelItem => item.UserName)</td>
+                        <td class="u-align-left">@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td class="u-align-center">@Html.DisplayFor(modelItem => item.SubscriptionType)</td>
+                        <td class="u-align-center">@Html.DisplayFor(modelItem => item.SubscriptionStatus)</td>
+                        <td class="u-align-left">@Html.DisplayFor(modelItem => item.CreditCard)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <nav>
+                        <ul class="pagination pagination-sm u-float-left">
+                            <li class="page-item">
+                                <a class='page-link prev' id="Previous" 
+                                   href="@Url.Action("Index","Subscription", new { page = Model.PaginationInfo.ActualPage - 1 })"
+                                   aria-label="Previous">
+                                    <span class="icon-ico-arrowcopy"></span>
+                                    <span>Previous</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-xs-4 u-align-center">Page @(Model.PaginationInfo.ActualPage + 1) of @Html.DisplayFor(x => x.PaginationInfo.TotalPages)</div>
+                <div class="col-xs-4">
+                    <nav>
+                        <ul class="pagination pagination-sm u-float-right">
+                            <li class="page-item">
+                                <a class='page-link next'id="Next" 
+                                   href="@Url.Action("Index","Subscription", new { page = Model.PaginationInfo.ActualPage + 1 })" 
+                                   aria-label="Next">
+                                    <span>Next</span>
+                                    <span class="icon-ico-arrow-blue"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

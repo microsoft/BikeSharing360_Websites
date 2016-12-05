@@ -1,0 +1,91 @@
+@model BikeSharing_Private_Web_Site.Models.IssueViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<div class="container page-container bsh-stations">
+    <div class="row flex-items-xs-bottom">
+        <div class="col-md-3 col-sm-12">
+            <h1>Issues</h1>
+        </div>
+        <div class="col-md-9 col-sm-12 u-bottom u-align-right">
+        </div>
+    </div>
+
+    <div class="margin-middle-top">
+        <table class="table">
+            <thead class="thead-default">
+                <tr>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Solved
+                    </th>
+                    <th>
+                        User Id
+                    </th>
+                    <th>
+                        User Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Bike id
+                    </th>
+                    <th>
+                        Bike serial
+                    </th>
+                    <th>
+                        From
+                    </th>
+                    <th>
+                        To
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Issues)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IssueType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IssueTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IssueSolved)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserEmail)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BikeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BikeSerialNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RideFrom)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RideTo)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

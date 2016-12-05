@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using BikeSharing_Private_Web_Site.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<li class="nav-item nav-user-block">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="nav-item nav-user-info hidden-sm-down">
+            @{ var user = await UserManager.GetUserAsync(User); }
+            <span class="nav-link">@user.Name</span>
+        </div>
+
+        <avatar user="@User" class="nav-item nav-avatar hidden-xs-down"></avatar>
+
+        <div class="nav-item nav-user-info">
+            <a class="nav-link" href="/Account/Logout">
+                <span class="icon-switch"></span>
+            </a>
+        </div>
+    }
+</li>

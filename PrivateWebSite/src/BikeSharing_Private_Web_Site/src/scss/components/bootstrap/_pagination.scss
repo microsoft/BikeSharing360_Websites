@@ -1,0 +1,26 @@
+@import '../../base/variables';
+
+.pagination{
+    margin: 0;
+
+    .page-link{
+        border: none;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.71;
+        text-align: left;
+        color: $color-brand;
+    }
+    .page-link.active{
+        background: $color-background-active;
+    }
+    .page-link.prev{
+        margin-right: 15px;
+    }
+    .page-link.next{
+        margin-left: 15px;
+    }
+}

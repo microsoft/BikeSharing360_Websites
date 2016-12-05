@@ -23,6 +23,22 @@ Project must be opened using VS2017RC (No VS2015 support).
 
 Code has been updated to use some of the new MVC Core features , like _Tag Helpers_.
 
+BikeSharing360 Private Web Site (Netcore 1.1)
+---------------------------------------------
+
+This repo contains also a demo private web site that uses the microservices to display some lists about the BikeSharing360  users' operations. The folder _/PrivateWebSite/ contains all files for the private web.
+
+This project **is a netcore 1.1 website** and must be opened with **VS2017 RC** (no support for VS2015). Contains some of the new features of the netcore 1.1 as AppServices logs integration and View Components as Tag Helpers among others.
+
+This website needs a database. The _appsettings.json_ has a connection string against a (local)\mssqllocaldb database named _bikesharing-private-web_. You can use the file _/PrivateWebSite/sql/SampleDb.sql to fill the database with schema and sample data (Note that you have to manually create the database.)
+
+Also, you need to edit the _appsettings.json_ file and update:
+
+* **The connection string** (Only if your database is located in any other SQL Server or has another name)
+* **The APIs endpoints** The private web site uses three microservices (rides, profiles and APIs). You need to provide the server on which these microservices run. Remember that those microservices are in the [BikeSharing360 Backend Repository](https://github.com/Microsoft/BikeSharing360_BackendServices).
+
+Once database is created you can login with any user with the password "Bikes360".
+
 Keynote's MultiContainer Demo
 -----------------------------
 

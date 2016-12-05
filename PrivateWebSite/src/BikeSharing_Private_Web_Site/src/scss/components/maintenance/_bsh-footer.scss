@@ -1,0 +1,75 @@
+@import '../../base/variables';
+
+.bsh-footer{
+    border-top: 1px $color-separator solid;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 20px 5%;
+
+    &-logo{
+        background: url("/images/logo-my-bikes-3-6-0-footer.png") no-repeat;
+        background-size: contain;
+        height: 62px;
+    }
+
+    &-ms-logo{
+        background: url("/images/logo-microsoft.png") no-repeat;
+        height: 22px;
+        background-size: contain;
+    }
+
+    &-nav,
+    &-links{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &-nav {
+        float: left;
+        padding-right: 20px;
+        font-family: Montserrat;
+        font-size: 14px;
+        line-height: 2.98;
+        text-align: left;
+        color: $color-brand;
+    }
+
+    &-nav-item{
+        float: left;
+        padding-right: 20px;
+        font-family: Montserrat;
+        font-size: 14px;
+        line-height: 2.98;
+        text-align: left;
+        color: $color-brand;
+    }
+    &-links{
+        right: 0;
+        position: absolute;
+    }
+    &-list-item{
+        float: left;
+        padding-right: 20px;
+        font-family: SourceSansPro;
+        font-weight: $font-weight-normal;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 2.98;
+        text-align: left;
+    }
+    &-link{
+        color: $color-semi-dark;
+    }
+    &-footnote{
+        float: left;
+        font-family: SourceSansPro;
+        font-weight: $font-weight-normal;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 1.71;
+        text-align: left;
+        color: $color-semi-dark;
+        margin: 0;
+    }
+}

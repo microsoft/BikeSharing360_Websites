@@ -1,0 +1,53 @@
+.u-bottom {
+    display: block;
+    transform: translateY(101%);
+}
+
+.u-align {
+    &-right {
+        text-align: right;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-center {
+        text-align: center;
+    }
+}
+
+.u-mb-10 {
+    margin-bottom: 10px;
+}
+
+.u-p-0 {
+    padding: 0;
+}
+
+.u-float {
+    &-left {
+        float: left;
+    }
+
+    &-right {
+        float: right;
+    }
+}
+
+ .u-width {
+    &-100 {
+        width: 100px;
+    }
+
+    &-200 {
+        width: 200px;
+    }
+ }
+
+ .u-ellipsis {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+ }

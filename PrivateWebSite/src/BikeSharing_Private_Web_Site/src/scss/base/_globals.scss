@@ -1,0 +1,51 @@
+@import 'variables';
+
+html,
+body {
+    background: $color-background-light;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: $font-weight-normal;
+    height: 100%;
+    width: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    color: $color-brand;
+    text-decoration: none !important;
+}
+h1{
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: $font-weight-light;
+    text-align: left;
+    color: $color-dark;
+    margin: 0;
+}
+body{
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  text-align: left;
+  color: $color-light;
+}
+
+.page-container{
+    margin-top: 50px;
+    padding: 0;
+}
+.margin-middle-top{
+    margin-top: 10px;
+}
+.margin-large-top{
+    margin-top: 30px;
+}

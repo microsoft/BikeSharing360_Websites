@@ -1,0 +1,13 @@
+@import '../../base/variables';
+
+.bsh-login {
+    &-label {
+        font-size: 1.2em;
+        margin-top: 4px;
+    }
+
+    &-submit {
+        background-color: $color-brand;
+        color: $color-background-light;
+    }
+}

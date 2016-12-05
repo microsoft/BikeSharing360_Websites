@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BikeSharing_Private_Web_Site</title>
+    <link rel="shortcut icon" type="image/png" href="~/images/favicon.ico" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <div class="navbar-brand"></div>
+            <div id="bd-main-nav">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Ride" asp-action="Index">Rides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Issue" asp-action="Index">Issues</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Subscription" asp-action="Index">Subscriptions</a>
+                    </li>
+
+                    @await Html.PartialAsync("_LoginPartial")
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer class="bsh-footer">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+                <div class="bsh-footer-logo"></div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <ul class="bsh-footer-nav">
+                    <li class="bsh-footer-nav-item"><a asp-area="" asp-controller="Ride" asp-action="Index">Rides</a></li>
+                    <li class="bsh-footer-nav-item"><a asp-area="" asp-controller="Issue" asp-action="Index">Issues</a></li>
+                    <li class="bsh-footer-nav-item"><a asp-area="" asp-controller="Subscription" asp-action="Index">Subscriptions</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <ul class="bsh-footer-links">
+                    <li class="bsh-footer-list-item"><a class="bsh-footer-link" href="#">Terms</a></li>
+                    <li class="bsh-footer-list-item"><a class="bsh-footer-link" href="#">Privacy</a></li>
+                    <li class="bsh-footer-list-item"><a class="bsh-footer-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row margin-large-top">
+            <div class="col-sm-2">
+                <div class="bsh-footer-ms-logo"></div>
+            </div>
+            <div class="col-sm-8">
+                <p class="bsh-footer-footnote">
+                    This is a sample demo application for developers built with educational purposes only.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/libs.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var url = window.location.pathname;
+        var substr = url.split('/');
+        var urlaspx = substr[substr.length - 1];
+        $('.nav').find('.is-active').removeClass('is-active');
+        $('.nav li a').each(function () {
+            if ((urlaspx.length === 0 || urlaspx.toLowerCase().indexOf('ride') > -1) && $(this).text().toLowerCase() === 'rides') {
+                $(this).parent().addClass('is-active');
+                return;
+            }
+
+            if (this.href.indexOf(urlaspx) >= 0 && urlaspx.toLowerCase() !== 'login' && urlaspx.length > 0) {
+                $(this).parent().addClass('is-active');
+            }
+        });
+    });
+</script>

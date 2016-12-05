@@ -1,0 +1,79 @@
+@model BikeSharing_Private_Web_Site.Models.RideViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Default";
+}
+
+
+<div class="container page-container bsh-stations">
+    <div class="row flex-items-xs-bottom">
+        <div class="col-md-3 col-sm-12">
+            <h1>Rides</h1>
+        </div>
+        <div class="col-md-9 col-sm-12 u-bottom u-align-right">
+            <span>Showing @Html.DisplayFor(modelItem => modelItem.PaginationInfo.ItemsPerPage) of @Html.DisplayFor(modelItem => modelItem.PaginationInfo.TotalItems) rides - Page @(Model.PaginationInfo.ActualPage + 1) of @Html.DisplayFor(x => x.PaginationInfo.TotalPages)</span>
+        </div>
+    </div>
+
+    <div class="margin-middle-top">
+        <table class="table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="is-centered">Id</th>
+                    <th class="is-centered u-width-min-100">Ride Type</th>
+                    <th class="is-centered">Duration</th>
+                    <th class="is-centered  u-width-min-180">Start</th>
+                    <th class="is-centered  u-width-min-180">Stop</th>
+                    <th class="is-centered">From</th>
+                    <th class="is-centered">To</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Rides)
+                {
+                    <tr>
+                        <td class="is-info" scope="row">@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td class="is-light">@Html.DisplayFor(modelItem => item.RideType)</td>
+                        <td class="is-centered">@Html.DisplayFor(modelItem => item.Duration)</td>
+                        <td class="is-centered">@Html.DisplayFor(modelItem => item.Start)</td>
+                        <td class="is-centered">@Html.DisplayFor(modelItem => item.Stop)</td>
+                        <td class="is-centered">@Html.DisplayFor(modelItem => item.From)</td>
+                        <td class="is-centered">@Html.DisplayFor(modelItem => item.To)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <nav>
+                        <ul class="pagination pagination-sm u-float-left">
+                            <li class="page-item">
+                                <a class="page-link prev @Model.PaginationInfo.Previous" id="Previous"
+                                   href="@Url.Action("Index","Ride", new { page = Model.PaginationInfo.ActualPage + -1 })"
+                                   aria-label="Previous">
+                                    <span class="icon-ico-arrowcopy"></span>
+                                    <span>Previous</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-xs-4 u-align-center">Page @(Model.PaginationInfo.ActualPage + 1) of @Html.DisplayFor(x => x.PaginationInfo.TotalPages)</div>
+                <div class="col-xs-4">
+                    <nav>
+                        <ul class="pagination pagination-sm u-float-right">
+                            <li class="page-item">
+                                <a class="page-link next @Model.PaginationInfo.Next" id="Next"
+                                   href="@Url.Action("Index","Ride", new { page = Model.PaginationInfo.ActualPage + 1 })"
+                                   aria-label="Next">
+                                    <span>Next</span>
+                                    <span class="icon-ico-arrow-blue"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

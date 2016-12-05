@@ -1,0 +1,47 @@
+@import '../../base/variables';
+
+.table{
+    font-size: 14px;
+    color: $color-semi-dark;
+
+    .thead-default th {
+        background: $color-brand;
+        color: $color-background-light;
+        font-family: Montserrat;
+        font-weight: $font-weight-normal;
+        line-height: 2.98;
+        padding: 6px 11px;
+    }
+
+    tbody{
+        background: $color-background-dark;
+
+        td{
+            border-top: 1px $color-separator solid;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    thead > tr > th:first-child, tbody > tr > td:first-child{
+        padding-left: 25px;
+    }
+
+    thead > tr > th:last-child, tbody > tr > td:last-child{
+        padding-right: 25px;
+    }
+
+    td.is-light{
+        color: $color-light;
+    }
+    td.is-info{
+        color: $color-brand;
+    }
+    td.is-danger{
+        color: $color-danger;
+    }
+    td.is-success{
+        color: $color-success;
+    }
+
+}

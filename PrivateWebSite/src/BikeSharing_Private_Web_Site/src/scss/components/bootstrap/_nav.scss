@@ -1,0 +1,55 @@
+@import '../../base/variables';
+
+.nav{
+    padding: 0;
+    border-bottom: 1px solid $color-background-dark;
+
+    .navbar .nav &-item{
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: $font-weight-normal;
+        line-height: 2.32;
+        text-align: left;
+        color: $color-brand;
+        padding: 5px 8px;
+    }
+    .navbar .nav &-item.is-active{
+        background: $color-background-active;
+    }
+    .navbar .nav &-item.is-separated{
+        border-right: 1px solid $color-background-dark;
+    }
+    .navbar .nav &-link{
+        padding: 0.3rem 0.7rem;
+    }
+    .navbar .nav &-user-info{
+        color: $color-brand;
+    }
+    .navbar .nav &-status-info{
+        color: $color-light;
+    }
+    .navbar .nav &-avatar{
+        max-width: 60px;
+        height: 60px;
+        padding: 0;
+        margin: 0;
+        width: 60px;
+        background-size: cover;
+        background-position: center;
+    }
+    .navbar .nav &-user-block{
+        float: right;
+        padding: 0;
+    }
+    .navbar .nav &-item+&-item {
+        margin-left: 0!important;
+    }
+
+    @media (min-width: $lg-minwidth) {
+        .navbar &{
+            float: none;
+            display: block;
+        }
+    }
+}
+
