@@ -21,7 +21,7 @@
     "rimraf": "^2.5.4"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
+    "bootstrap": "^4.0.0-alpha.6",
     "del": "^2.2.2",
     "jquery": "^3.1.1",
     "jquery-validation": "^1.15.1",
