@@ -1,4 +1,4 @@
-/// <binding BeforeBuild='build' />
+/// <binding BeforeBuild='build, default' />
 'use strict';
 
 // Dependencies

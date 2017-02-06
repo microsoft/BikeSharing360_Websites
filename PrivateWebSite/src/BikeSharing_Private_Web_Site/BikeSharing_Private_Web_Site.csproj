@@ -1,144 +1,43 @@
-﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
-  
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>BikeSharing_Private_Web_Site</AssemblyName>
-    <OutputType>Exe</OutputType>
-    <UserSecretsId>aspnet-BikeSharing_Private_Web_Site-fa83158c-02ee-475e-8767-765ca991e413</UserSecretsId>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">$(PackageTargetFallback);portable-net40+sl5+win8+wp8+wpa81;portable-net45+win8+wp8+wpa81;dnxcore50</PackageTargetFallback>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-    <EmbeddedResource Include="compiler\resources\**\*" />
-    <Content Include="wwwroot\**\*;**\*.cshtml;appsettings.json;web.config">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161104-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk.Web">
-      <Version>1.0.0-alpha-20161104-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore">
-      <Version>1.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Routing">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design">
-      <Version>1.1.0-preview1-final</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
-      <Version>1.0.0-msbuild1-final</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Logging">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Logging.Console">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions">
-      <Version>1.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.SecretManager.Tools">
-      <Version>1.0.0-preview3-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink.Loader">
-      <Version>14.1.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression">
-      <Version>1.0.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.AzureAppServicesIntegration">
-      <Version>1.0.0-preview1-final</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.Precompilation.Tools">
-      <Version>1.0.0-preview1-final</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
-    <PackageReference Include="Microsoft.NETCore.App">
-      <Version>1.1.0-preview1-001100-00</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <DotNetCliToolReference Include="BundlerMinifier.Core">
-      <Version>2.2.301</Version>
-    </DotNetCliToolReference>
-    <DotNetCliToolReference Include="Microsoft.AspNetCore.Mvc.Razor.Precompilation.Tools">
-      <Version>1.0.0-preview1-final</Version>
-    </DotNetCliToolReference>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet">
-      <Version>1.0.0-msbuild1-final</Version>
-    </DotNetCliToolReference>
-    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools">
-      <Version>1.0.0-msbuild1-final</Version>
-    </DotNetCliToolReference>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools">
-      <Version>1.0.0-msbuild1-final</Version>
-    </DotNetCliToolReference>
-  </ItemGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+    <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.0-preview1-final"/>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.0-preview1-final" />
+      
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools"  Version="1.0.0-msbuild1-final" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0-preview3-final" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink.Loader" Version="14.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="1.0.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.AzureAppServicesIntegration" Version="1.0.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.Precompilation.Tools" Version="1.0.0-preview1-final" />
+  </ItemGroup>
 
-  <Target Name="PrepublishScript" BeforeTargets="Publish" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
-    <Exec Command="dotnet bundle" />
-  </Target>
-
-  <Target Name="PostpublishScript" AfterTargets="Publish" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
-    <Exec Command="dotnet publish-iis --publish-folder $(TargetDir) --framework $(TargetFrameworkIdentifier),Version=$(TargetFrameworkVersion)" />
-  </Target>
-  
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
+    <DotNetCliToolReference Include="Microsoft.AspNetCore.Mvc.Razor.Precompilation.Tools" Version="1.0.0-preview1-final" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0-msbuild1-final" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0-msbuild1-final" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0-msbuild1-final" />
+  </ItemGroup>
 </Project>

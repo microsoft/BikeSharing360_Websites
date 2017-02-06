@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - BikeSharing_Private_Web_Site</title>
     <link rel="shortcut icon" type="image/png" href="~/images/favicon.ico" />
     <link rel="stylesheet" href="~/css/styles.css" />
-    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+    @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
     <header class="navbar">
