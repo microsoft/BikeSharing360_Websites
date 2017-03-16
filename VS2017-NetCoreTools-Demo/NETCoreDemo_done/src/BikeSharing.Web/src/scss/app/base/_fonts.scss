@@ -1,0 +1,93 @@
+﻿@import 'variables';
+
+// @Author https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
+    $src: null;
+
+    $extmods: ( eot: '?', svg: '#' + str-replace($name, ' ', '_') );
+
+    $formats: ( otf: 'opentype', ttf: 'truetype' );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+@mixin font-include($font, $type, $weight: null, $style: null) {
+    @include font-face($font, '/Content/www/fonts/' + $font + '/' + $font + '-' + $type, $weight, $style);
+}
+
+// Fonts
+$font: Montserrat;
+$types: Regular, Bold;
+@include font-include(Montserrat, Regular, $font-weight-normal);
+@include font-include(Montserrat, Bold, $font-weight-bold);
+
+@include font-include(SourceSansPro, Regular, $font-weight-normal);
+@include font-include(SourceSansPro, Bold, $font-weight-bold);
+@include font-include(SourceSansPro, SemiBold, $font-weight-semibold);
+@include font-include(SourceSansPro, Black, $font-weight-black);
+
+@include font-include(SourceSansPro, Italic, $font-weight-normal, italic);
+@include font-include(SourceSansPro, BoldItalic, $font-weight-bold, italic);
+@include font-include(SourceSansPro, SemiBoldItalic, $font-weight-bold, italic);
+@include font-include(SourceSansPro, BlackItalic, $font-weight-bold, italic);
+
+@include font-include(RobotoSlab, Regular, $font-weight-normal);
+@include font-include(RobotoSlab, Bold, $font-weight-bold);
+@include font-include(RobotoSlab, Light, $font-weight-light);
+
+// Icomoon
+@include font-include(Icomoon, Regular);
+
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+}
+
+.icon-facebook:before {
+    content: '\ea90';
+}
+.icon-instagram:before {
+    content: '\ea92';
+}
+.icon-twitter:before {
+    content: '\ea96';
+}

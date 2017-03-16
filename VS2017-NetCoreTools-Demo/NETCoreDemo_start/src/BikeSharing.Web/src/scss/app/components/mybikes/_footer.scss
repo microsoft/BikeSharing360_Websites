@@ -1,0 +1,82 @@
+﻿@import '../../base/variables';
+
+.mb {
+    &-footerb {
+        border-top: $border-big solid $color-background-semilight;
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    &-footer {
+        margin: 0 auto 20px auto;
+        max-width: 90%;
+        transform: translateX($size-container-translate);
+
+        &-info {
+            color: $color-foregorund-semidark;
+            font-family: 'SourceSansPro';
+            font-size: .9em;
+            font-style: italic;
+            font-weight: $font-weight-light;
+        }
+
+        &-links {
+            @media screen and (max-width: $media-bs-md) {
+                padding-top: 20px;
+            }
+        }
+
+        &-menu {
+            display: block;
+            list-style: none;
+        }
+
+        &-item {
+            display: inline-block;
+            margin-left: 40px;
+
+            &--social {
+                margin-left: 30px;
+
+                @media screen and (max-width: $media-bs-md) {
+                    display: inline-block !important;
+                    margin-left: 20px !important;
+                }
+            }
+
+            @media screen and (max-width: $media-screen-max-m) {
+                margin-left: 10px;
+            }
+
+            @media screen and (max-width: $media-bs-md) {
+                display: block;
+                margin-left: 0;
+            }
+        }
+
+        &-link {
+            color: $color-brand;
+            font-size: .9em;
+        }
+
+        &-logo {
+            display: block;
+            margin-top: 25px;
+            max-width: 95px;
+        }
+
+        &-ms {
+            display: block;
+            margin: 35px 0;
+            max-width: 150px;
+        }
+
+        @media screen and (max-width: $media-screen-max-s) {
+            transform: none;
+        }
+
+        @media screen and (max-width: $media-screen-max-xxs) {
+            max-width: 100%;
+        }
+    }
+}

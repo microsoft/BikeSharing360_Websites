@@ -1,0 +1,99 @@
+﻿@mixin width-offset-generator($type, $t, $size, $suffix, $jump) {
+    $offsets: '', top, left, bottom, right;
+    $off: '', t, l, b, r;
+    $max: $size / $jump;
+
+    @for $i from 0 through $max {
+        @each $offset in $offsets {
+            $o: nth($off, index($offsets, $offset));
+            $value: if($i == 0, 0, $jump * $i);
+            $uni: if($i == 0, #{''}, px);
+            $off-value: if($o == '', #{''}, '-' + $offset);
+
+            #{'.u-' + $t + $o + '-' + $value} {
+                #{$type}#{$off-value}#{$suffix}: $value + $uni;
+            }
+        }
+    }
+}
+
+@mixin generate-offsets($type, $t, $size) {
+    @include width-offset-generator($type, $t, $size, #{''}, 5);
+}
+
+@mixin generate-widths($type, $t, $size) {
+    @include width-offset-generator($type, $t, $size, '-width', 1);
+}
+
+@include generate-offsets(margin, m, 50);
+@include generate-offsets(padding, p, 50);
+@include generate-widths(border, b, 10);
+
+// Text align
+.u-align {
+    &-center {
+        text-align: center;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+}
+
+// Ellipsis
+.u-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.u-center {
+    &-container {
+        position: relative;
+    }
+
+    &-vertical,
+    &-vertical--before::before,
+    &-vertical--after::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &-horizontal,
+    &-horizontal--before::before,
+    &-horizontal--after::after {
+        display: block;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+
+    &-both,
+    &-both--before::before,
+    &-both--after::after {
+        display: block;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// Preload
+.u-pre {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 100%;
+
+    img {
+        opacity: 0;
+        transition: all .5s;
+    }
+}

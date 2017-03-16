@@ -1,0 +1,57 @@
+﻿@import '../../base/variables';
+
+.mb {
+    &-site {
+        padding: 0;
+
+        @media screen and (max-width: $media-screen-max-xs) {
+            padding-top: $size-header;
+        }
+
+        &-header,
+        &-container {
+            margin-left: -2%;
+
+            @media screen and (max-width: $media-bs-lg) {
+                margin-left: 0;
+            }
+        }
+
+        &-header {
+            background: $color-background-semilight;
+            color: $color-brand;
+            font-size: 2em;
+            padding: 15px 30px;
+
+            &--brand {
+                background-color: $color-brand;
+                color: $color-foreground-light;
+            }
+
+            &--big {
+                margin-bottom: 70px;
+
+                @media screen and (max-width: $media-bs-lg) {
+                    margin-left: -$size-container-translate * 2;
+                }
+
+                @media screen and (max-width: $media-screen-max-m) {
+                    margin-right: 0;
+                }
+
+                @media screen and (max-width: $media-screen-max-xs) {
+                    margin-bottom: 20px;
+                    padding: 15px 20px;
+                }
+            }
+
+            @media screen and (max-width: $media-bs-lg) {
+                font-size: 1.8em;
+            }
+
+            @media screen and (max-width: $media-screen-max-m) {
+                font-size: 1.6em;
+            }
+        }
+    }
+}

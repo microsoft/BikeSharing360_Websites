@@ -1,0 +1,219 @@
+﻿@import '../../base/variables';
+
+.mb {
+    &-hiw {
+        $space-top: 65px;
+        margin: 0 $size-margin-box;
+        max-width: #{'calc(' + 100% + ' - ' + $size-margin-box +')'};
+        position: relative;
+        transform: translateX($size-container-translate);
+
+        &-list {
+            color: $color-foreground-dark;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+
+            @media screen and (max-width: $media-screen-max-s) {
+                margin-left: #{'calc(3% - ' + $size-container-translate + ')'};
+            }
+
+            @media screen and (max-width: $media-screen-max-xs) {
+                margin-left: #{'calc(2.5% - ' + $size-container-translate + ')'};
+            }
+
+            @media screen and (max-width: $media-screen-max-xxs) {
+                margin-left: #{'calc(1% - ' + $size-container-translate + ')'};
+            }
+        }
+
+        $responsive-margin: 14%;
+        $responsive-margin-xs: 9%;
+        $responsive-margin-xxs: 8%;
+
+        &-item {
+            $left-padding: 4%;
+            $before-width: 23vw;
+            $left-after: -6%;
+            margin-top: -5%;
+            opacity: 0;
+            padding: 0 0 0 $left-padding;
+            position: relative;
+            transition: all $animation-speed-default;
+
+            &.wayp.animated {
+                margin-top: 0;
+                opacity: 1;
+            }
+
+            @for $i from 1 through 3 {
+                &:nth-of-type(#{$i}) {
+                    transition-delay: $i * .3s;
+                }
+            }
+
+            &::before {
+                background-color: $color-background-semilight;
+                content: '';
+                display: block;
+                height: 70%;
+                left: -6%;
+                position: absolute;
+                top: 30px;
+                width: $before-width;
+
+                @media screen and (max-width: $media-bs-lg) {
+                    width: 96%;
+                }
+
+                @media screen and (max-width: $media-screen-min-m) {
+                    width: 80%;
+                }
+            }
+
+            &::after {
+                $font-size: 2.6em;
+                $margin: .4em;
+                $width: 70px;
+                background: $color-secondary;
+                color: $color-brand;
+                content: attr(data-number)'.';
+                font-family: 'RobotoSlab';
+                font-size: $font-size;
+                font-style: italic;
+                font-weight: $font-weight-light;
+                height: $width;
+                left: $left-after;
+                line-height: $font-size - $margin;
+                padding-right: $margin/2;
+                position: absolute;
+                text-align: right;
+                top: -40px;
+                width: $width;
+
+                @media screen and (max-width: $media-screen-max-xs) {
+                    $width: 40px;
+                    font-size: 1.8em;
+                    height: $width;
+                    line-height: 1.4em;
+                    top: 0;
+                    width: $width;
+                }
+            }
+
+            @media screen and (max-width: $media-screen-max-l) {
+                padding: 0 0 0 $left-padding - 2;
+            }
+
+            @media screen and (max-width: $media-bs-lg) {
+                padding-bottom: 60px;
+            }
+        }
+
+        &-title {
+            color: $color-brand;
+            font-size: 3em;
+            font-weight: $font-weight-normal;
+            margin: 0;
+            padding: 0 0 5% 0;
+
+            @media screen and (max-width: $media-screen-max-l) {
+                font-size: 2.6em;
+                padding-left: $responsive-margin;
+            }
+
+            @media screen and (max-width: $media-screen-max-xs) {
+                padding-left: $responsive-margin-xs;
+            }
+
+            @media screen and (max-width: $media-screen-max-xxs) {
+                font-size: 2em;
+                margin-top: 10px;
+                padding-left: $responsive-margin-xxs;
+            }
+        }
+
+        &-info {
+            $height: 115px;
+            font-family: 'SourceSansPro';
+            font-size: 1.125em;
+            height: $height;
+            max-width: 90%;
+            padding: 0;
+            z-index: 2;
+
+            @media screen and (max-width: $media-screen-max-l) {
+                font-size: 1em;
+                max-width: 100%;
+                padding-left: $responsive-margin;
+            }
+
+            @media screen and (max-width: $media-bs-lg + 200px) {
+                font-size: .875em;
+                height: $height * .6;
+            }
+
+            @media screen and (max-width: $media-bs-lg) {
+                height: $height * .35;
+                max-width: $media-bs-lg * .6;
+            }
+
+            @media screen and (max-width: $media-screen-max-xs) {
+                padding-left: $responsive-margin-xs;
+            }
+
+            @media screen and (max-width: $media-screen-max-xxs) {
+                height: $height * .904;
+                max-width: 90%;
+                padding-left: $responsive-margin-xxs;
+            }
+        }
+
+        &-image {
+            line-height: 0;
+            max-width: 100%;
+            padding: 12% 0;
+            position: relative;
+            z-index: 2;
+
+            img {
+                width: 100%;
+            }
+
+            @media screen and (max-width: $media-screen-menu) {
+                overflow: hidden;
+                width: 87%;
+            }
+
+            @media screen and (max-width: $media-screen-max-l) {
+                padding: $responsive-margin 0 0 $responsive-margin;
+            }
+
+            @media screen and (max-width: $media-screen-max-xs) {
+                padding: $responsive-margin-xs 0 0 $responsive-margin-xs;
+            }
+
+            @media screen and (max-width: $media-screen-max-xxs) {
+                padding: $responsive-margin-xxs 0 0 $responsive-margin-xxs;
+            }
+        }
+
+        &-shadow {
+            box-shadow: $shadow-default;
+            padding: 0;
+        }
+
+        @media screen and (max-width: $media-screen-max-l) {
+            margin-bottom: 50px;
+        }
+
+        @media screen and (max-width: $media-screen-max-s) {
+            margin-bottom: 15px;
+            margin-left: $size-container-translate * 2;
+            margin-right: 0;
+            max-width: 100%;
+            transform: none;
+        }
+    }
+}

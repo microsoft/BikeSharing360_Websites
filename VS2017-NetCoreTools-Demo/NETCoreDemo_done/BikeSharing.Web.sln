@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeSharing.Web", "src\BikeSharing.Web\BikeSharing.Web.csproj", "{A608954F-29A5-42F9-80E2-E3B8990D1492}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeSharing.Web.Data", "src\BikeSharing.Web.Data\BikeSharing.Web.Data.csproj", "{E547E3D6-DE92-429D-B796-2CA403469B68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A608954F-29A5-42F9-80E2-E3B8990D1492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A608954F-29A5-42F9-80E2-E3B8990D1492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A608954F-29A5-42F9-80E2-E3B8990D1492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A608954F-29A5-42F9-80E2-E3B8990D1492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E547E3D6-DE92-429D-B796-2CA403469B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E547E3D6-DE92-429D-B796-2CA403469B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E547E3D6-DE92-429D-B796-2CA403469B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E547E3D6-DE92-429D-B796-2CA403469B68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

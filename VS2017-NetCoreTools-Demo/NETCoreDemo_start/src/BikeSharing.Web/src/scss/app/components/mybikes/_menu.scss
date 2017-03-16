@@ -1,0 +1,172 @@
+﻿@import '../../base/variables';
+
+.mb {
+    &-menu {
+        font-size: 1.125em;
+
+        &-wrapper {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            @media screen and (max-width: $media-screen-menu) {
+                background: $color-background-semilight;
+                height: 0;
+                left: 0;
+                overflow: hidden;
+                padding-left: 6vw;
+                position: fixed;
+                text-align: left;
+                top: $size-header;
+                transition: all $animation-speed-default;
+                width: 100vw;
+                z-index: 20;
+            }
+        }
+
+        &-item {
+            display: inline-block;
+            padding: 0 10px;
+
+            @media screen and (max-width: $media-screen-max-m) {
+                padding: 0 8px;
+            }
+
+            @media screen and (max-width: $media-screen-menu) {
+                display: block;
+                font-size: 1.25em;
+                padding-top: 20px;
+            }
+        }
+
+        $border: $border-big;
+
+        &-link {
+            border-bottom: 2px solid $color-background-light;
+            color: $color-brand;
+            cursor: pointer;
+            text-decoration: none !important;
+
+            &:hover {
+                border-color: $color-secondary;
+            }
+
+            &--highlighted {
+                $size: 30px;
+                $padding: $size - $border;
+                border: $border solid $color-secondary;
+                color: $color-foreground-dark;
+                overflow: hidden;
+                padding: $padding/3 $padding;
+                position: relative;
+                transition: all $animation-speed-default;
+
+                &:hover {
+                    background-color: $color-secondary;
+                    color: $color-brand;
+                    transition: all $animation-speed-default;
+                }
+
+                @media screen and (max-width: $media-screen-max-m) {
+                    $size: 15px;
+                    $border: $border-medium;
+                    $padding: $size - $border;
+                    border-width: $border;
+                    padding: $padding/3 $padding;
+                }
+
+                @media screen and (max-width: $media-screen-max-s) {
+                    $size: 15px;
+                    $border: $border - 1;
+                    $padding: $size - $border;
+                    border-width: $border;
+                    padding: $padding/3 $padding;
+                }
+            }
+
+            @media screen and (max-width: $media-screen-menu) {
+                border-bottom-color: $color-background-semilight;
+
+                &--highlighted {
+                    $size: 30px;
+                    $padding: $size - $border;
+                    border-bottom-color: $color-secondary;
+                    border-width: $border-big;
+                    display: inline-block;
+                    margin-top: 20px;
+                    padding: $padding/3 $padding;
+                }
+            }
+        }
+
+        $button-height: 12px;
+        $button-width: 25px;
+
+        &-toggle {
+            cursor: pointer;
+            height: $button-height;
+            position: absolute;
+            right: 5%;
+            top: -10px;
+            transition: opacity .25s ease;
+            width: $button-width;
+            z-index: 100;
+
+            @media screen and (min-width: $media-screen-menu) {
+                top: -20vh;
+            }
+        }
+
+        $line-height: $button-height/3;
+        $multiplier: 1.8;
+
+        &-line {
+            background: $color-foregorund-darker;
+            border: none;
+            cursor: pointer;
+            height: $line-height;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: all $animation-speed-default ease;
+            width: 100%;
+
+            &--middle {
+                top: $line-height * $multiplier;
+            }
+
+            &--bottom {
+                top: $line-height * 2 * $multiplier;
+            }
+        }
+
+        &-check:checked ~ &-toggle &-line {
+            transform: translateY($line-height * $multiplier) translateX(0) rotate(45deg);
+
+            &--middle {
+                opacity: 0;
+                transform: translateX($button-width * 3);
+            }
+
+            &--bottom {
+                transform: translateY(-$line-height * $multiplier) translateX(0) rotate(-45deg);
+            }
+        }
+
+        &-check:checked ~ &-wrapper {
+            @media screen and (max-width: $media-screen-menu) {
+                height: #{'calc(100vh - ' + $size-header + ')'};
+                padding-top: 40px;
+                transition: all $animation-speed-default;
+            }
+        }
+
+        @media screen and (max-width: $media-screen-max-m) {
+            font-size: .95em;
+        }
+
+        @media screen and (max-width: $media-screen-max-s) {
+            font-size: .9em;
+        }
+    }
+}

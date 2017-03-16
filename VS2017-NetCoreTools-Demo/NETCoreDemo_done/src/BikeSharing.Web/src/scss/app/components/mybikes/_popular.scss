@@ -1,0 +1,239 @@
+﻿@import '../../base/variables';
+
+.mb {
+    &-popular {
+        margin: 0 $size-margin-box;
+        max-width: #{'calc(' + 100% + ' - ' + $size-margin-box +')'};
+        position: relative;
+        transform: translateX($size-container-translate);
+
+        $height: 672px;
+        $init-trans: -150%;
+
+        &-maps {
+            box-shadow: $shadow-default;
+            height: $height;
+            overflow: hidden;
+            position: relative;
+
+            &.animated {
+                .mb-popular-map {
+                    &--layer2 {
+                        animation: show-map $animation-speed-default ease forwards;
+                    }
+
+                    &--layer3 {
+                        animation: show-map $animation-speed-default ease forwards;
+                        animation-delay: $animation-speed-slow;
+                    }
+
+                    &--layer4 {
+                        animation: show-map $animation-speed-slow ease-out forwards;
+                        animation-delay: $animation-speed-slow * 2;
+                    }
+                }
+
+                .mb-popular-button {
+                    &--layer1 {
+                        animation: show-button $animation-speed-default ease-out forwards;
+                        animation-delay: $animation-speed-slow * 3;
+                    }
+
+                    &--layer2 {
+                        animation: show-button $animation-speed-default ease-out forwards;
+                        animation-delay: $animation-speed-slow * 4;
+                    }
+
+                    &--layer3 {
+                        animation: show-map $animation-speed-default forwards;
+                        animation-delay: $animation-speed-slow * 5;
+                    }
+                }
+            }
+
+            @keyframes show-map {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes show-button {
+                0% {
+                    opacity: 0;
+                    transform: translateX($init-trans);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            @media screen and (max-width: $media-screen-max-l) {
+                max-height: $height * .9;
+            }
+
+            @media screen and (max-width: $media-screen-max-m) {
+                max-height: $height * .8;
+            }
+
+            @media screen and (max-width: $media-screen-max-s) {
+                max-height: $height * 1.2;
+            }
+        }
+
+        &-map {
+            display: block;
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            width: 1800px;
+
+            img {
+                width: 100%;
+            }
+
+            &--layer1 {
+                opacity: 1;
+                visibility: visible !important;
+            }
+
+            &--layer4 {
+                width: 37vw;
+
+                @media screen and (max-width: $media-screen-max-s) {
+                    left: 5%;
+                    top: 55%;
+                    width: 100%;
+                }
+            }
+        }
+
+        &-content {
+            margin-left: 10%;
+
+            &.wayp {
+                opacity: 0;
+                transition: all $animation-speed-default .3s;
+
+                &.animated {
+                    opacity: 1;
+                    transition: all $animation-speed-default .3s;
+                }
+            }
+
+            @media screen and (max-width: $media-screen-max-l) {
+                margin-left: 6%;
+            }
+
+            @media screen and (max-width: $media-screen-max-m) {
+                margin-left: 4%;
+            }
+
+            @media screen and (max-width: $media-screen-max-s) {
+                top: 10%;
+                transform: none;
+                width: 100%;
+            }
+        }
+
+        &-text {
+            color: $color-brand;
+            font-size: 1.6em;
+            margin-bottom: 50px;
+            margin-top: 34px;
+            max-width: 720px;
+            width: 100%;
+
+            @media screen and (max-width: $media-screen-max-l) {
+                font-size: 1.3em;
+                max-width: 480px;
+            }
+
+            @media screen and (max-width: $media-screen-max-m) {
+                font-size: 1.1em;
+                max-width: 360px;
+            }
+
+            @media screen and (max-width: $media-screen-max-s) {
+                font-size: .9em;
+                margin-bottom: 20px;
+                margin-top: 12px;
+                max-width: 95%;
+            }
+        }
+
+        &-download {
+            color: $color-foreground-dark;
+            font-size: 1.125em;
+        }
+
+        &-downloaders {
+            list-style: none;
+            padding: 0;
+        }
+
+        &-downloader {
+            cursor: pointer;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            vertical-align: middle;
+
+            img {
+                height: 58px;
+
+                &:hover {
+                    opacity: .7;
+                    transition: all $animation-speed-fast;
+                }
+
+                @media screen and (max-width: $media-screen-max-l) {
+                    height: 42px;
+                }
+
+                @media screen and (max-width: $media-screen-max-s) {
+                    height: 36px;
+                }
+
+                @media screen and (max-width: $media-screen-max-xs) {
+                    height: 30px;
+                }
+            }
+        }
+
+        &-logo {
+            max-width: 372px;
+            min-width: 275px;
+            width: 100%;
+
+            @media screen and (max-width: $media-screen-max-l) {
+                width: 80%;
+            }
+
+            @media screen and (max-width: $media-screen-max-s) {
+                width: 68%;
+            }
+        }
+
+        @media screen and (max-width: $media-bs-lg) {
+            margin-left: $size-container-translate * 2;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: $media-screen-max-s) {
+            margin-right: 0;
+            transform: none;
+        }
+
+        @media screen and (max-width: $media-screen-max-xs) {
+            margin: 0;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}

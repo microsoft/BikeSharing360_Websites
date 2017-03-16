@@ -1,0 +1,18 @@
+﻿/* stylelint-disable */
+
+@import 'overrides';
+
+// Core variables and mixins
+@import '../../../node_modules/bootstrap/scss/custom';
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/mixins';
+
+// Reset and dependencies
+@import '../../../node_modules/bootstrap/scss/normalize';
+@import '../../../node_modules/bootstrap/scss/print';
+
+// Core CSS
+@import '../../../node_modules/bootstrap/scss/grid';
+
+// Utilities
+@import '../../../node_modules/bootstrap/scss/utilities/flex';
