@@ -8,13 +8,13 @@ BikeSharing360 is a fictitious example of a smart bike sharing system with 10,00
 
 In this demo scenario, we built several apps for both the enterprise and the consumer (bike riders). You can find all other BikeSharing360 repos in the following locations:
 
-*[Mobile Apps](https://github.com/Microsoft/BikeSharing360_MobileApps)
-*[Backend Services](https://github.com/Microsoft/BikeSharing360_BackendServices)
-*[Websites](https://github.com/Microsoft/BikeSharing360_Websites)
-*[Single Container Apps](https://github.com/Microsoft/BikeSharing360_SingleContainer)
-*[Multi Container Apps](https://github.com/Microsoft/BikeSharing360_MultiContainer)
-*[Cognitive Services Kiosk App](https://github.com/Microsoft/BikeSharing360_CognitiveServicesKioskApp)
-*[Azure Bot App](https://github.com/Microsoft/BikeSharing360_BotApps)
+ * [Mobile Apps](https://github.com/Microsoft/BikeSharing360_MobileApps)
+ * [Backend Services](https://github.com/Microsoft/BikeSharing360_BackendServices)
+ * [Websites](https://github.com/Microsoft/BikeSharing360_Websites)
+ * [Single Container Apps](https://github.com/Microsoft/BikeSharing360_SingleContainer)
+ * [Multi Container Apps](https://github.com/Microsoft/BikeSharing360_MultiContainer)
+ * [Cognitive Services Kiosk App](https://github.com/Microsoft/BikeSharing360_CognitiveServicesKioskApp)
+ * [Azure Bot App](https://github.com/Microsoft/BikeSharing360_BotApps)
 
 Websites
 ========
