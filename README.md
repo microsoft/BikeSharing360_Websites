@@ -1,6 +1,6 @@
 #BikeSharing360
 
-During our Connect(); event this year we presented 15 demos in Scott Guthrie’s and Scott Hanselman’s keynotes. If you missed the keynotes, you can watch the recording in [Channel 9](https://channel9.msdn.com/Events/Connect/2016/Keynotes-Scott-Guthrie-and-Scott-Hanselman).
+During our Connect(); event this year we presented 15 demos in Scott Guthrie’s and Scott Hanselman’s keynotes. If you missed the keynotes, you can watch the recording on [Channel 9](https://channel9.msdn.com/Events/Connect/2016/Keynotes-Scott-Guthrie-and-Scott-Hanselman).
 
 This year, we built the technology stack for a fictional company named BikeSharing360, which allows users to rent bikes from one location to another.
 
@@ -27,9 +27,9 @@ The solution `BikeSharing.Web.sln` located in folder `/PublicWeb/` contains the 
 
 Project can be opened using VS2015 Update 3 or VS2017RC.
 
-This web uses gulp tasks to manage assets and scripts. Output of gulp tasks is in the `Content` folder, and outputs of tasks gulps **are not part of the csproj file**. This is because if output files are part of the csproj, VS wants to include them in source control, what makes no sense for generated files.
+This web uses gulp tasks to manage assets and scripts. Output of gulp tasks is in the `Content` folder, and outputs of tasks gulps **are not part of the csproj file**. This is because if output files are part of the csproj, VS wants to include them in source control, which makes no sense for generated files.
 
-The csproj file was modified manually to include a MSBuild Task to allow publish the output of gulp, even thought this output is not part of the project. Look at the csproj at line 710 and below for these changes.
+The csproj file was modified manually to include a MSBuild Task to allow publish the output of gulp, even though this output is not part of the project. Look at the csproj in line 710 and below for these changes.
 
 BikeSharing360 Public Web Site (NetCore)
 ---------------------------------------
@@ -79,7 +79,7 @@ You need an Azure account to work with this demo code. You can:
 
 ## Blogs posts
 
-Here's links to blog posts related to this project:
+Here are links to blog posts related to this project:
 
 - Xamarin Blog: [Microsoft Connect(); 2016 Recap](https://blog.xamarin.com/microsoft-connect-2016-recap/)
 - The Visual Studio Blog: [Announcing the new Visual Studio for Mac](https://blogs.msdn.microsoft.com/visualstudio/2016/11/16/visual-studio-for-mac/)
