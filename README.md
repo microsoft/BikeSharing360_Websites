@@ -1,4 +1,4 @@
-#BikeSharing360
+#BikeSharing360-An Amazing Projct
 
 During our Connect(); event this year we presented 15 demos in Scott Guthrie’s and Scott Hanselman’s keynotes. If you missed the keynotes, you can watch the recording in [Channel 9](https://channel9.msdn.com/Events/Connect/2016/Keynotes-Scott-Guthrie-and-Scott-Hanselman).
 
@@ -7,6 +7,7 @@ This year, we built the technology stack for a fictional company named BikeShari
 BikeSharing360 is a fictitious example of a smart bike sharing system with 10,000 bikes distributed in 650 stations located throughout New York City and Seattle. Their vision is to provide a modern and personalized experience to riders and to run their business with intelligence.
 
 In this demo scenario, we built several apps for both the enterprise and the consumer (bike riders). You can find all other BikeSharing360 repos in the following locations:
+Resources-
 
 *[Mobile Apps](https://github.com/Microsoft/BikeSharing360_MobileApps)
 *[Backend Services](https://github.com/Microsoft/BikeSharing360_BackendServices)
@@ -16,7 +17,7 @@ In this demo scenario, we built several apps for both the enterprise and the con
 *[Cognitive Services Kiosk App](https://github.com/Microsoft/BikeSharing360_CognitiveServicesKioskApp)
 *[Azure Bot App](https://github.com/Microsoft/BikeSharing360_BotApps)
 
-Websites
+Amazing Websites
 ========
 This repo contains the BikeSharing360 web sites.
 
