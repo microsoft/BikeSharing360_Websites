@@ -1,4 +1,4 @@
-#BikeSharing360
+#BikeSharing360 - An amazing project.
 
 During our Connect(); event this year we presented 15 demos in Scott Guthrie’s and Scott Hanselman’s keynotes. If you missed the keynotes, you can watch the recording in [Channel 9](https://channel9.msdn.com/Events/Connect/2016/Keynotes-Scott-Guthrie-and-Scott-Hanselman).
 
@@ -15,6 +15,7 @@ In this demo scenario, we built several apps for both the enterprise and the con
 *[Multi Container Apps](https://github.com/Microsoft/BikeSharing360_MultiContainer)
 *[Cognitive Services Kiosk App](https://github.com/Microsoft/BikeSharing360_CognitiveServicesKioskApp)
 *[Azure Bot App](https://github.com/Microsoft/BikeSharing360_BotApps)
+
 
 Websites
 ========
